@@ -9,8 +9,6 @@ export const profile = {
   location: 'Dhaka, Bangladesh',
 }
 
-export const navigation = ['Home', 'About', 'Skills', 'Projects', 'Research', 'Leadership', 'Contact'] as const
-
 export const skills = [
   { title: 'Languages', items: ['C#', 'C++', 'Java', 'Python', 'JavaScript', 'TypeScript', 'PHP', 'Dart', 'SQL', 'HTML', 'CSS'] },
   { title: 'Backend', items: ['ASP.NET Core', 'MVC', 'Web API', 'EF Core', '.NET Framework', 'Node.js', 'NestJS', 'REST APIs', 'WebSockets'] },

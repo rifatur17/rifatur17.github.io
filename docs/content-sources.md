@@ -8,7 +8,14 @@ Primary source: the newer `Rifatur_Rahman_CV (1).pdf` supplied in Downloads. Bot
 
 The LinkedIn destination `https://www.linkedin.com/in/rifatur-rahman11/` is verified from the CV's link annotation. LinkedIn returns HTTP 999 to automated retrieval; that restriction does not establish a broken profile. The site uses the supplied actual URL.
 
-CV SHA-256: `2c7cfe202477509c94df4014b6317d26a959300b9b53a8e91a8164c557b5ce8d`. The public and built copies must retain these bytes. The real portrait was extracted from the CV's embedded image without generating a new face.
+CV SHA-256: `2c7cfe202477509c94df4014b6317d26a959300b9b53a8e91a8164c557b5ce8d`. The public and built copies must retain these bytes. The redesign's explicitly supplied `Rifatur_Rahman_CV (1).pdf` was checked and matches this existing copy exactly; it was copied unchanged, not regenerated or replaced with an older CV.
+
+## Supplied redesign photographs
+
+- `1000166477.jpg.jpeg` → `public/assets/rifatur-professional-portrait.jpg`: blazer portrait used on Home, 173,659 bytes.
+- `FB_IMG_1792153872813.jpg.jpeg` → `public/assets/rifatur-outdoor-portrait.jpg`: outdoor personal photo used on About, 48,961 bytes. No research, event, or professional-employment context is inferred from it.
+
+Both local images were visually inspected. Their original bytes are preserved; responsive CSS controls framing. At these sizes no lossy recompression is needed. They are not fabricated faces or project screenshots. Browser tests compare the served image hashes with the supplied files. The earlier portrait extracted from the CV is retained, along with the existing project and social assets.
 
 ## Project claims
 

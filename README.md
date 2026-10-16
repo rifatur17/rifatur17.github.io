@@ -1,6 +1,6 @@
 # Rifatur Rahman — portfolio
 
-An original editorial portfolio for a full-stack developer and AIUB CSE student. Near-black surfaces, restrained electric blue, self-hosted type, and project-specific technical visuals.
+An original editorial portfolio for a full-stack developer and AIUB CSE student. Eight independent destinations, near-black surfaces, restrained electric blue, self-hosted type, and project-specific technical visuals. Home is a focused landing experience; other content appears only on its own route.
 
 **Website:** https://rifatur17.github.io/
 
@@ -15,7 +15,17 @@ npm ci
 npm run dev
 ```
 
-Edit profile, skills, research, and project metadata in `src/data.ts`. Components are in `src/App.tsx` and `src/Visuals.tsx`; design tokens and responsive rules are in `src/styles.css`. Fonts are bundled from Fontsource, not requested from a third-party CDN at runtime.
+Edit profile, skills, research, and project metadata in `src/data.ts`. Route metadata lives in `src/routes.ts`; page content in `src/Pages.tsx`; navigation and route effects in `src/App.tsx`; reusable content in `src/Shared.tsx`; technical illustrations in `src/Visuals.tsx`. Design tokens and responsive rules are in `src/styles.css`. Fonts are bundled from Fontsource, not requested from a third-party CDN at runtime.
+
+## Routes and refresh behavior
+
+`/`, `/about/`, `/skills/`, `/projects/`, `/research/`, `/leadership/`, `/education/`, `/contact/`.
+
+React Router uses the browser History API for navigation and Back/Forward. Each route renders only its own page. Navigation updates the active link, document title, canonical/social metadata, scroll position, and heading focus. The homepage's Explore Portfolio hint opens Projects.
+
+After Vite builds, `scripts/static-routes.ts` generates a real `dist/<route>/index.html` for every destination with its own initial SEO metadata and an eight-URL sitemap. GitHub Pages can serve direct links and refreshes without a redirect shim or pretending missing pages are HTTP 200. Directory URLs use a trailing slash; GitHub Pages redirects slashless directory requests. A generated `404.html` lets unknown destinations display a useful Home link while retaining the server's real 404 response.
+
+When adding routes, update the shared route registry, route component mapping, and browser coverage. No GitHub Pages server rewrite configuration is required.
 
 ## Verify
 
@@ -29,7 +39,7 @@ npm test
 
 Local browser tests use installed Google Chrome. CI uses Playwright Chromium. If Chrome is unavailable locally, first run `npx playwright install chromium` and change the local `channel` in `playwright.config.ts` to use that browser instead. Test outputs are ignored by Git.
 
-Tests cover four viewport widths (1440, 834, 390, 320), navigation and focus, menu/Escape behavior, anchor offsets, active sections, reduced motion, overflow, asset failures, contact/project destinations, CV download bytes, SEO assets, and automated WCAG A/AA checks. Automated accessibility checks cannot establish complete accessibility or every assistive-technology interaction.
+Tests cover four viewport widths (1440, 834, 390, 320): each page's direct access and refresh, actual static HTML metadata, active navigation, Back/Forward without document reload, heading focus, mobile menu/Escape, reduced motion, overflow, image decoding, contact/project destinations, exact CV/photo bytes, sitemap, unknown destinations, and automated WCAG A/AA checks on all eight pages. Automated accessibility checks cannot establish complete accessibility or every assistive-technology interaction.
 
 Run the same checks against a deployed site in PowerShell:
 
@@ -48,7 +58,7 @@ No source CV, other project repository, or original project history is modified 
 ## Assets and content
 
 - `public/assets/Rifatur_Rahman_CV.pdf` is an unchanged copy of the latest supplied CV.
-- The portrait is the genuine embedded photo extracted from that CV.
+- Home uses the supplied blazer portrait (`rifatur-professional-portrait.jpg`); About uses the supplied outdoor portrait (`rifatur-outdoor-portrait.jpg`). Both are small JPEGs (about 174 KB and 49 KB), copied byte-for-byte. CSS adapts their framing without altering the originals. Home prioritizes its portrait request; images on other destinations load only when those pages are visited. The earlier CV portrait is retained as an available asset.
 - The StockPilot preview is an actual screenshot captured with isolated test data.
 - IncidentLens, hospital, and orbital figures are original labeled illustrations, not fake screenshots.
 - IncidentLens retains upstream authorship; its demo is explicitly the upstream deployment.
