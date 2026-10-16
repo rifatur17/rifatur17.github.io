@@ -80,6 +80,8 @@ function NotFound() {
 
 export default function App() {
   const location = useLocation()
+  const currentPageIndex = pages.findIndex(page => page.path === pageForPath(location.pathname)?.path)
+  const nextPage = pages[(currentPageIndex + 1) % pages.length]
   return <div className="site-shell">
     <a href="#main" className="skip-link">Skip to content</a>
     <Navigation />
@@ -99,6 +101,6 @@ export default function App() {
         </Routes>
       </div>
     </main>
-    <footer className="site-footer container"><p>© {new Date().getFullYear()} Rifatur Rahman</p><span>BUILT WITH INTENT.</span><Link to="/">Return Home <ArrowRight size={15} /></Link></footer>
+    <footer className="site-footer container"><p>© {new Date().getFullYear()} Rifatur Rahman</p><span>BUILT WITH INTENT.</span><div className="footer-navigation"><Link to="/">Return Home</Link><Link className="next-page" to={nextPage.path} aria-label={`Next page: ${nextPage.label}`}><span>Next</span>{nextPage.label}<ArrowRight size={15} /></Link></div></footer>
   </div>
 }

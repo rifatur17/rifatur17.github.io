@@ -51,6 +51,12 @@ test('Home contains only the landing experience and Explore Portfolio opens Proj
   await expect(page.getByText('Full-Stack Developer', { exact: true })).toBeVisible()
   await expect(page.locator('#projects, #research, #education, #contact, .project, .skill-table')).toHaveCount(0)
   await expect(page.locator('.hero-portrait img')).toHaveAttribute('src', '/assets/rifatur-professional-portrait.jpg')
+  if (page.viewportSize()!.width <= 650) {
+    const portrait = (await page.locator('.hero-portrait').boundingBox())!
+    const copy = (await page.locator('.hero-copy').boundingBox())!
+    expect(portrait.width).toBeGreaterThanOrEqual(page.viewportSize()!.width * .7)
+    expect(portrait.y).toBeGreaterThanOrEqual(copy.y + copy.height)
+  }
   await page.getByRole('link', { name: 'Explore Portfolio', exact: false }).click()
   await expect(page).toHaveURL(/\/projects\/$/)
   await expect(page.locator('main h1')).toBeFocused()
@@ -143,7 +149,7 @@ test('verified links, contributions, research and new photos remain accurate', a
   await expect(page.locator(`a[href="${research.paper}"]`)).toHaveCount(1)
   await expect(page.getByText('50.8%', { exact: true })).toBeVisible()
   await page.goto('/about/')
-  await expect(page.locator('.portrait-wrap img')).toHaveAttribute('src', '/assets/rifatur-outdoor-portrait.jpg')
+  await expect(page.locator('.portrait-wrap img')).toHaveAttribute('src', '/assets/rifatur-professional-portrait.jpg')
   await page.goto('/contact/')
   await expect(page.locator(`a[href="${profile.linkedin}"]`)).toHaveCount(1)
   await expect(page.locator(`a[href="mailto:${profile.email}"]`)).toHaveCount(3)
@@ -174,4 +180,18 @@ test('unknown destinations show a useful page with a working Home link', async (
   await expect(page.getByRole('heading', { name: 'A different path.' })).toBeVisible()
   await page.getByRole('link', { name: 'Return Home', exact: true }).first().click()
   await expect(page.locator('#home')).toBeVisible()
+})
+
+
+test('footer provides a complete page journey and About offers the supplied CV', async ({ page }) => {
+  await page.goto('/')
+  for (const destination of [...pages.slice(1), pages[0]]) {
+    await page.getByRole('link', { name: `Next page: ${destination.label}`, exact: true }).click()
+    await expect(page).toHaveURL(new RegExp(`${destination.path}$`))
+    await expect(page.locator('main h1')).toBeFocused()
+  }
+  await page.goto('/about/')
+  const download = page.waitForEvent('download')
+  await page.getByRole('link', { name: 'Download CV', exact: true }).click()
+  expect((await download).suggestedFilename()).toBe('Rifatur_Rahman_CV.pdf')
 })

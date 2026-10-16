@@ -12,6 +12,7 @@ export function HomePage() {
           <h1 tabIndex={-1}>Rifatur<br /><span>Rahman</span><span className="name-period">.</span></h1>
           <p className="hero-role">Full-Stack Developer</p>
           <p className="hero-description">I build .NET applications, modern web experiences, and AI-powered systems—connecting thoughtful interfaces with the engineering underneath.</p>
+          <ul className="hero-specialties" aria-label="Primary focus areas"><li>.NET Development</li><li>Web Applications</li><li>AI Engineering</li></ul>
           <div className="hero-actions"><Link to="/projects/" className="button button-primary">Explore Projects <ArrowUpRight size={17} /></Link><a href={profile.cv} className="button button-secondary" download>Download CV <ArrowDownToLine size={17} /></a></div>
           <div className="hero-socials"><ExternalLink href={profile.github}><CodeXml size={17} /> GitHub</ExternalLink><ExternalLink href={profile.linkedin}><ContactRound size={17} /> LinkedIn</ExternalLink></div>
         </div><figure className="hero-portrait"><div className="portrait-frame"><img src="/assets/rifatur-professional-portrait.jpg" alt="Rifatur Rahman wearing a grey blazer and black shirt" width="1024" height="1536" fetchPriority="high" /><span className="portrait-frame-index" aria-hidden="true">RR / 01</span></div><figcaption><span>RIFATUR RAHMAN</span><span>FULL-STACK DEVELOPER</span></figcaption></figure></div>
@@ -22,12 +23,12 @@ export function HomePage() {
 export function AboutPage() {
   return <section id="about" tabIndex={-1} className="section destination about-section container reveal">
         <SectionLabel number="01">THE PERSON BEHIND THE CODE</SectionLabel>
-        <div className="about-grid"><div className="portrait-wrap"><img src="/assets/rifatur-outdoor-portrait.jpg" alt="Rifatur Rahman standing outdoors with his arms folded" width="979" height="982" /><span className="portrait-mark" aria-hidden="true">RR /</span><p>RIFATUR RAHMAN <span>DHAKA, BD</span></p></div><div className="about-copy">
+        <div className="about-grid"><div className="portrait-wrap"><img src="/assets/rifatur-professional-portrait.jpg" alt="Rifatur Rahman wearing a grey blazer and black shirt" width="1024" height="1536" /><span className="portrait-mark" aria-hidden="true">RR /</span><p>RIFATUR RAHMAN <span>DHAKA, BD</span></p></div><div className="about-copy">
           <h1 className="page-title" tabIndex={-1}>Curious by nature.<br /><span className="muted">Builder by practice.</span></h1>
           <p className="large-copy">I’m a Computer Science and Engineering student at AIUB, working across full-stack development, .NET, and AI engineering.</p>
           <p>I enjoy understanding how the pieces fit: the interface someone uses, the data it relies on, and the backend that makes it work. My projects span inventory workflows, incident analysis, healthcare scheduling, and interactive graphics.</p>
           <p>Alongside software, I lead academic research and collaborate on team projects—from shaping an idea to implementing, testing, and documenting it.</p>
-          <div className="focus-areas"><span>.NET Development</span><span>Web Technologies</span><span>AI & Machine Learning</span></div>
+          <div className="focus-areas"><span>.NET Development</span><span>Web Technologies</span><span>AI & Machine Learning</span></div><a href={profile.cv} className="button button-secondary about-cv" download>Download CV <ArrowDownToLine size={17} /></a>
         </div></div>
       </section>
 }

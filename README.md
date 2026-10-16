@@ -21,7 +21,7 @@ Edit profile, skills, research, and project metadata in `src/data.ts`. Route met
 
 `/`, `/about/`, `/skills/`, `/projects/`, `/research/`, `/leadership/`, `/education/`, `/contact/`.
 
-React Router uses the browser History API for navigation and Back/Forward. Each route renders only its own page. Navigation updates the active link, document title, canonical/social metadata, scroll position, and heading focus. The homepage's Explore Portfolio hint opens Projects.
+React Router uses the browser History API for navigation and Back/Forward. Each route renders only its own page. Navigation updates the active link, document title, canonical/social metadata, scroll position, and heading focus. The homepage's Explore Portfolio hint opens Projects. Footer next-page links provide a complete journey through all eight destinations, alongside the Home link.
 
 After Vite builds, `scripts/static-routes.ts` generates a real `dist/<route>/index.html` for every destination with its own initial SEO metadata and an eight-URL sitemap. GitHub Pages can serve direct links and refreshes without a redirect shim or pretending missing pages are HTTP 200. Directory URLs use a trailing slash; GitHub Pages redirects slashless directory requests. A generated `404.html` lets unknown destinations display a useful Home link while retaining the server's real 404 response.
 
@@ -58,7 +58,7 @@ No source CV, other project repository, or original project history is modified 
 ## Assets and content
 
 - `public/assets/Rifatur_Rahman_CV.pdf` is an unchanged copy of the latest supplied CV.
-- Home uses the supplied blazer portrait (`rifatur-professional-portrait.jpg`); About uses the supplied outdoor portrait (`rifatur-outdoor-portrait.jpg`). Both are small JPEGs (about 174 KB and 49 KB), copied byte-for-byte. CSS adapts their framing without altering the originals. Home prioritizes its portrait request; images on other destinations load only when those pages are visited. The earlier CV portrait is retained as an available asset.
+- Home and About use the explicitly selected blazer portrait (`rifatur-professional-portrait.jpg`, about 174 KB), copied byte-for-byte. CSS adapts its framing without altering the original. The outdoor photo and earlier CV portrait are retained as available assets. Home prioritizes its portrait request; other destinations load only when visited. About also offers the exact supplied CV download.
 - The StockPilot preview is an actual screenshot captured with isolated test data.
 - IncidentLens, hospital, and orbital figures are original labeled illustrations, not fake screenshots.
 - IncidentLens retains upstream authorship; its demo is explicitly the upstream deployment.

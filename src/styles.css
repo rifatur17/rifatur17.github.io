@@ -104,3 +104,36 @@
  .contact-heading .page-title{font-size:clamp(38px,10.3vw,65px)}
 }
 @media(prefers-reduced-motion:reduce){.page-stage,.explore-hint>svg{animation:none}}
+/* Final portrait-led polish: clearer type and a continuous page journey. */
+@media(min-width:1051px){.navigation a{font-size:12px}}
+.hero-grid{grid-template-columns:1.1fr .9fr;gap:55px}
+.hero-portrait{width:min(100%,420px)}
+.hero-topline .eyebrow,.hero-location{font-size:11px;letter-spacing:.075em}
+.hero-description{font-size:15px;line-height:1.85}
+.hero-specialties{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:22px;color:#b9c4d8;font:10px/1.7 var(--mono)}
+.hero-specialties li{display:flex;align-items:center;gap:8px}
+.hero-specialties li::before{content:'';width:4px;height:4px;background:var(--blue)}
+.hero-actions{margin-top:25px}
+.hero-portrait figcaption{font-size:9px;letter-spacing:.035em}
+.about-section .portrait-wrap img{aspect-ratio:4/5;object-position:center 25%}
+.about-cv{margin-top:28px}
+.footer-navigation{display:flex;align-items:center;gap:28px}
+.site-footer .next-page{font-size:11px;color:var(--text);gap:12px;min-height:44px}
+.next-page>span{color:var(--muted);font-size:9px}
+.next-page:hover,.footer-navigation a:hover{color:var(--light-blue)}
+@media(max-width:1150px){.hero-grid{gap:35px}.hero-portrait{width:min(100%,360px)}.hero-specialties{gap:9px 14px;font-size:9px}}
+@media(max-width:900px){.hero-topline .eyebrow,.hero-location{font-size:9px}.hero-portrait figcaption{font-size:8px}.hero-description{font-size:14px}.hero-specialties{font-size:9px;gap:8px 12px}}
+@media(max-width:650px){
+ .hero-grid{grid-template-columns:1fr;gap:34px}
+ .hero-portrait{width:calc(100% - 20px);max-width:350px;justify-self:center;margin-right:14px}
+ .portrait-frame{aspect-ratio:4/4.5}
+ .hero-portrait figcaption{font-size:8px;flex-wrap:wrap}
+ .hero-topline .eyebrow{font-size:9px;letter-spacing:.025em}
+ .hero-specialties{font-size:9px;gap:8px 16px;margin-top:20px}
+ .hero .hero-description{font-size:14px;line-height:1.85}
+ .hero-bottom .explore-hint{font-size:15px}
+ .site-footer{align-items:flex-start}
+ .footer-navigation{flex-wrap:wrap;justify-content:flex-end;gap:8px 20px;max-width:70%}
+ .site-footer .next-page{font-size:10px;gap:9px;flex-wrap:wrap}
+ .next-page>span{font-size:8px}
+}
