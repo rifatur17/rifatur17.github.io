@@ -1,3 +1,12 @@
+<!-- BEGIN animated project showcase -->
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset=".github/showcase/still-overview-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset=".github/showcase/still-overview.svg">
+  <source media="(max-width: 600px)" srcset=".github/showcase/overview-mobile.svg">
+  <img src=".github/showcase/overview.svg" width="1200" alt="Rifatur Rahman / Portfolio — animated workflow illustration, not live telemetry.">
+</picture>
+<!-- END animated project showcase -->
+
 # Rifatur Rahman — portfolio
 
 An original editorial portfolio for a full-stack developer and AIUB CSE student. Eight independent destinations, near-black surfaces, restrained electric blue, self-hosted type, and project-specific technical visuals. Home is a focused landing experience; other content appears only on its own route.
