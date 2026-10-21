@@ -1,0 +1,21 @@
+import { expect, test } from '@playwright/test'
+
+test('effects move, pause completely, resume, and respect reduced motion', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'no-preference' })
+  await page.goto('/')
+  const field = page.locator('.hacker-atmosphere canvas')
+  const pixels = () => field.evaluate(element => (element as HTMLCanvasElement).toDataURL())
+  await page.getByRole('button', { name: 'Pause animations' }).click()
+  await expect(page.getByRole('button', { name: 'Resume animations' })).toHaveAttribute('aria-pressed', 'true')
+  const paused = await pixels()
+  await page.waitForTimeout(150)
+  expect(await pixels()).toBe(paused)
+  await page.getByRole('button', { name: 'Resume animations' }).click()
+  await expect.poll(pixels).not.toBe(paused)
+  await expect(page.getByRole('button', { name: 'Pause animations' })).toHaveAttribute('aria-pressed', 'false')
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  await expect(page.getByRole('button', { name: 'Pause animations' })).toBeHidden()
+  const reduced = await pixels()
+  await page.waitForTimeout(150)
+  expect(await pixels()).toBe(reduced)
+})

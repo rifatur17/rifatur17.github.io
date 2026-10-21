@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, Route, Routes, useLocation } from 'react-router-dom'
 import { ArrowRight, ArrowUpRight, Menu, X } from 'lucide-react'
 import { profile } from './data'
+import { HackerAtmosphere } from './HackerAtmosphere'
 import { pages, pageForPath } from './routes'
 import { AboutPage, ContactPage, EducationPage, HomePage, LeadershipPage, ProjectsPage, ResearchPage, SkillsPage } from './Pages'
 
@@ -79,10 +80,12 @@ function NotFound() {
 }
 
 export default function App() {
+  const [motion, setMotion] = useState(true)
   const location = useLocation()
   const currentPageIndex = pages.findIndex(page => page.path === pageForPath(location.pathname)?.path)
   const nextPage = pages[(currentPageIndex + 1) % pages.length]
-  return <div className="site-shell">
+  return <div className={`site-shell${motion ? '' : ' motion-paused'}`}>
+    <HackerAtmosphere enabled={motion} onToggle={() => setMotion(value => !value)} />
     <a href="#main" className="skip-link">Skip to content</a>
     <Navigation />
     <RouteEffects />

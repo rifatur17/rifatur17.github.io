@@ -9,7 +9,7 @@
 
 # Rifatur Rahman — portfolio
 
-An editorial portfolio for a full-stack developer and AIUB CSE student. Eight independent destinations, warm ivory surfaces, forest-green typography, an arched portrait, self-hosted type, and project-specific technical visuals. Home introduces the developer and links directly to selected work, research, and the person behind the code.
+A terminal-inspired portfolio for a full-stack developer and AIUB CSE student. Eight independent destinations, dark surfaces, neon-green accents, self-hosted type, and project-specific technical visuals. A canvas particle network responds to the pointer; floating code symbols, ambient light, and a terminal cursor add motion. Pause FX stops the decorative effects. Reduced-motion preferences are respected, and the canvas stops animating in hidden tabs. Home links directly to selected work, research, and the person behind the code.
 
 **Website:** https://rifatur17.github.io/
 
@@ -24,7 +24,7 @@ npm ci
 npm run dev
 ```
 
-Edit profile, skills, research, and project metadata in `src/data.ts`. Route metadata lives in `src/routes.ts`; page content in `src/Pages.tsx`; navigation and route effects in `src/App.tsx`; reusable content in `src/Shared.tsx`; technical illustrations in `src/Visuals.tsx`. Base layout lives in `src/styles.css`; the editorial design tokens and responsive refinements live in `src/editorial.css`. Fonts are bundled from Fontsource, not requested from a third-party CDN at runtime.
+Edit profile, skills, research, and project metadata in `src/data.ts`. Route metadata lives in `src/routes.ts`; page content in `src/Pages.tsx`; navigation and route effects in `src/App.tsx`; reusable content in `src/Shared.tsx`; technical illustrations in `src/Visuals.tsx`. Base layout lives in `src/styles.css`, layout refinements in `src/editorial.css`, and the terminal skin in `src/hacker.css`. Animated canvas behavior lives in `src/HackerAtmosphere.tsx`. Fonts are bundled from Fontsource, not requested from a third-party CDN at runtime.
 
 ## Routes and refresh behavior
 

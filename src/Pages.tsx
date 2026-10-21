@@ -8,7 +8,7 @@ export function HomePage() {
   return <section id="home" tabIndex={-1} className="hero container">
         <div className="hero-topline"><span className="eyebrow"><span className="status-dot" /> SOFTWARE DEVELOPMENT · AI ENGINEERING</span><span className="hero-location">DHAKA, BANGLADESH</span></div>
         <div className="hero-grid"><div className="hero-copy">
-          <p className="hero-intro">A little curiosity. A lot of building.</p>
+          <p className="hero-intro"><span aria-hidden="true">~/rifatur $ </span>Turning curiosity into code.</p>
           <h1 tabIndex={-1}>Rifatur<br /><span>Rahman</span><span className="name-period">.</span></h1>
           <p className="hero-role">Full-Stack Developer</p>
           <p className="hero-description">I build .NET applications, modern web experiences, and AI-powered systems—connecting thoughtful interfaces with the engineering underneath.</p>
@@ -17,7 +17,7 @@ export function HomePage() {
           <div className="hero-socials"><ExternalLink href={profile.github}><CodeXml size={17} /> GitHub</ExternalLink><ExternalLink href={profile.linkedin}><ContactRound size={17} /> LinkedIn</ExternalLink></div>
         </div><figure className="hero-portrait"><div className="portrait-frame"><img src="/assets/rifatur-professional-portrait.jpg" alt="Rifatur Rahman wearing a grey blazer and black shirt" width="1024" height="1536" fetchPriority="high" /><span className="portrait-frame-index" aria-hidden="true">CODE.<br />CREATE.<br />REFINE.</span></div><figcaption><span>RIFATUR RAHMAN</span><span>BASED IN DHAKA ↗</span></figcaption></figure></div>
         <div className="home-index" aria-label="Explore my work"><Link to="/projects/"><span className="index-no">01 / SELECTED WORK</span><strong>Ideas, made real.</strong><span>.NET applications, web platforms & AI systems</span><ArrowUpRight size={22} /></Link><Link to="/research/"><span className="index-no">02 / RESEARCH</span><strong>Questions worth asking.</strong><span>Exploring how people interact with AI</span><ArrowUpRight size={22} /></Link><Link to="/about/"><span className="index-no">03 / A LITTLE ABOUT ME</span><strong>The person behind the code.</strong><span>CSE at AIUB. Always learning, always building.</span><ArrowUpRight size={22} /></Link></div>
-        <div className="hero-bottom"><span>THOUGHTFUL INTERFACES. SOLID FOUNDATIONS.</span><Link to="/projects/" className="explore-hint">Explore Portfolio <span>CLICK TO EXPLORE</span><ArrowDown size={16} aria-hidden="true" /></Link></div>
+        <div className="hero-bottom"><span><span className="terminal-prompt" aria-hidden="true">&gt; </span>THOUGHTFUL INTERFACES. SOLID FOUNDATIONS.</span><Link to="/projects/" className="explore-hint">Explore Portfolio <span>ENTER THE WORK</span><ArrowDown size={16} aria-hidden="true" /></Link></div>
       </section>
 }
 
