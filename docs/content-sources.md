@@ -19,6 +19,10 @@ Both local images were visually inspected. Their original bytes are preserved; r
 
 ## Project claims
 
+Project-list refresh, 22 October 2026: reviewed all nine public repositories on `rifatur17` and the profile README. Added G Energy from its README, frontend/backend structure, and documented demo workflows; surfaced the existing research study on Projects with a link to its dedicated page. The portfolio, profile repository, `github-test`, and explicitly synthetic contribution-calendar artwork are not additional software case studies. Hospital Appointment System remains included through the organization link in the public profile. Existing contribution attribution is preserved.
+
+G Energy source: https://github.com/rifatur17/G-Energy-Project-Demo . React/TypeScript/Vite, ASP.NET Core 10, EF Core 10, and SQL Server; Owner/Driver/Admin workflows, vehicle assignments, sample discovery, reservations, simulated charging, demo wallets/payments/refunds, and protected administration. No real charging infrastructure, real payment processing, public live deployment, or individual team-role ownership is claimed. The portfolio diagram is an architecture illustration, not an application screenshot.
+
 | Project | Sources | Scope and attribution |
 | --- | --- | --- |
 | StockPilot | Public repository, implementation, README, verification materials, actual dashboard screenshot | Rifatur's full-stack inventory/sales project. Identity/four roles, atomic inventory, POS/invoices/payments/returns/reports and automated testing are implemented. Screenshot uses isolated fixtures, not production transactions. No verified live deployment. |

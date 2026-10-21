@@ -62,6 +62,16 @@ export const projects = {
     stack: ['C++', 'OpenGL', 'GLUT'],
     repo: 'https://github.com/rifatur17/Solar-System-Simulation',
   },
+  genergy: {
+    id: '05', name: 'G Energy', kind: 'EV charging demonstration',
+    role: 'Full-stack demonstration project',
+    summary: 'From finding a charger to settling a simulated charging session.',
+    problem: 'Vehicle owners, assigned drivers, and administrators need connected workflows around charging reservations and payments.',
+    solution: 'A React and TypeScript frontend connects to an ASP.NET Core 10 API with EF Core and SQL Server. The demo covers vehicle assignments, sample station discovery, reservations, charging simulation, and wallet settlement.',
+    highlights: ['Owner, Driver, and Admin access with protected operations', 'Reservations, simulated charging, and session history', 'Demo wallets, payments, and refunds — no real money movement'],
+    stack: ['React', 'TypeScript', 'ASP.NET Core 10', 'EF Core 10', 'SQL Server'],
+    repo: 'https://github.com/rifatur17/G-Energy-Project-Demo',
+  },
 }
 
 export const research = {
